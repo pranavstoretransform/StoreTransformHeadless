@@ -1,0 +1,8 @@
+
+/* Fix for missing background image in StatsSection */
+.bg-1930 {
+    background-image: url('https://storetransform.com/wp-content/uploads/2022/12/hm-teslt-_1_.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
