@@ -14,25 +14,41 @@ const IntroSection = ({
   image = "https://storetransform.com/wp-content/uploads/2025/12/Group-1.webp"
 }: IntroSectionProps) => {
   return (
-    <section className="ms-sec-busnes2 sec-padd all-src-sec2 ed_section">
-      <div className="container rowss">
-        <div className="row-inner ms-busnes-inner ms-src-part2 tab-rws br-flex al-center">
-          <div className="col-50 ms-bsnes1 sp-100">
-            <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
-            <div dangerouslySetInnerHTML={{ __html: content }}></div>
-            <div className="buton">
+    <section className="ms-sec-busnes2 sec-padd all-src-sec2 ed_section" style={{ padding: '80px 0', backgroundColor: '#fff' }}>
+      <div className="container">
+        {/* Added dynamic flex-direction and alignment */}
+        <div className="row-inner ms-busnes-inner ms-src-part2 tab-rws br-flex al-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
+          
+          {/* Content Column */}
+          <div className="col-50 ms-bsnes1 sp-100" style={{ flex: '1', minWidth: '320px' }}>
+            <h2 
+              className="intro-title" 
+              style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '700', lineHeight: '1.2', marginBottom: '24px' }}
+              dangerouslySetInnerHTML={{ __html: title }}
+            ></h2>
+            
+            <div 
+              className="intro-content" 
+              style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#444', marginBottom: '30px' }}
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></div>
+          </div>
+
+          {/* Image Column */}
+          <div className="col-50 ms-bsnes2 sp-100" style={{ flex: '1', minWidth: '320px', position: 'relative' }}>
+            <div className="image-wrapper" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+              <Image 
+                src={image} 
+                alt="Intro Image" 
+                width={700} 
+                height={500} 
+                className="mx-100" 
+                priority
+                style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+              />
             </div>
           </div>
-          <div className="col-50 ms-bsnes2 sp-100">
-            <Image 
-              src={image} 
-              alt="Intro Image" 
-              width={600} 
-              height={400} 
-              className="mx-100" 
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </div>
+
         </div>
       </div>
     </section>
