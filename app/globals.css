@@ -15,3 +15,100 @@ body {
   background: var(--background);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+
+/* ===== HireDevelopers.tsx ===== */
+ 
+.hire-section {
+  background: linear-gradient(180deg, #000000 0%, #0c0c0c 100%);
+  padding: 100px 0;
+  color: #fff;
+}
+ 
+.hire-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+}
+ 
+.hire-header h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+ 
+.hire-header p {
+  max-width: 820px;
+  margin: 0 auto 70px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #d4d4d4;
+}
+ 
+/* GRID */
+.hire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+ 
+/* CARD */
+.hire-card {
+  background: #f2f2f2;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+ 
+.hire-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+ 
+.hire-card h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  transition: color 0.3s ease;
+}
+ 
+/* HOVER EFFECT */
+.hire-card:hover {
+  background: #ffffff;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 75, 43, 0.25);
+}
+ 
+.hire-card:hover img {
+  transform: scale(1.1);
+}
+ 
+.hire-card:hover h5 {
+  color: #ff4b2b;
+}
+ 
+/* TABLET */
+@media (max-width: 992px) {
+  .hire-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+/* MOBILE */
+@media (max-width: 600px) {
+  .hire-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+}
+/* ===== HireDevelopers.tsx  END ===== */
+ 
