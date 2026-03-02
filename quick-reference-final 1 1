@@ -1,0 +1,109 @@
+# Quick Reference: Figma → ACF → Next.js Workflow
+
+A visual guide and quick checklist for executing the complete workflow efficiently.
+
+---
+
+## Visual Workflow Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                          PHASE 1: DESIGN TRANSLATION                            │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  1.1 Analyze Design    →    1.2 Generate HTML/CSS/JS    →    1.3 Test & Refine  │
+│  (any designs)                    (Using AI Prompts)        (Browser Testing)   │
+│                                                                                 │
+│  Deliverable: production-ready HTML file with embedded CSS & JS                 │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                      ↓
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                         PHASE 2: WORDPRESS & ACF SETUP                          │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  2.1 Plan ACF Fields   →   2.2 Create ACF Field Groups   →   2.3 Export JSON    │
+│  (From HTML)               (WordPress Admin)                  (Backup & Version)│
+│                                                                                 │
+│  Deliverable: ACF Flexible Content fields + JSON export                         │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                      ↓
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                      PHASE 3: NEXT.JS SETUP & INTEGRATION                       │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  3.1 Create Project     →   3.2 API Helper    →   3.3 Build Components          │
+│  (Folder Structure)         (WordPress API)       (Section Components)          │
+│           ↓                                              ↓                      │
+│  3.4 Master Component   →   3.5 Dynamic Routes   →   3.6 Deploy                 │
+│  (AcfSections.jsx)          ([[...slug]].js)         (Test & Launch)            │
+│                                                                                 │
+│  Deliverable: Production-ready Next.js app connected to WordPress               │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Data Flow Diagram
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│                           USER REQUESTS PAGE                             │
+└─────────────────────────┬────────────────────────────────────────────────┘
+                          │
+                          ↓
+         ┌─────────────────────────────────┐
+         │  Next.js Dynamic Route          │
+         │  [[...slug]].js                 │
+         │  • getStaticPaths()             │
+         │  • getStaticProps()             │
+         └────────────┬────────────────────┘
+                      │
+                      ↓
+         ┌─────────────────────────────────┐
+         │  WordPress REST API             │
+         │  /wp-json/wp/v2/pages/{slug}    │
+         │  Returns:                       │
+         │  • Page title                   │
+         │  • ACF sections array           │
+         └────────────┬────────────────────┘
+                      │
+                      ↓
+         ┌─────────────────────────────────────────┐
+         │  ACF Flexible Content Data              │
+         │  ├─ acf_fc_layout: "hero_section"       │
+         │  ├─ title: "Welcome"                    │
+         │  ├─ subtitle: "..."                     │
+         │  └─ [other fields]                      │
+         │                                         │
+         │  ├─ acf_fc_layout: "feature_blocks"     │
+         │  ├─ features: [...]                     │
+         │  └─ [other fields]                      │
+         └────────────┬────────────────────────────┘
+                      │
+                      ↓
+         ┌─────────────────────────────────┐
+         │  AcfSections.jsx                │
+         │  • Routes by acf_fc_layout      │
+         │  • Maps to Components           │
+         └────────────┬────────────────────┘
+                      │
+        ┌─────────────┼─────────────┬──────────────┐
+        │             │             │              │
+        ↓             ↓             ↓              ↓
+    ┌────────┐  ┌──────────┐  ┌────────────┐  ┌──────────┐
+    │ Hero   │  │Features  │  │Testimonials│  │Contact   │
+    │Section │  │Blocks    │  │Section     │  │Form      │
+    └────────┘  └──────────┘  └────────────┘  └──────────┘
+        │             │             │              │
+        └─────────────┴─────────────┴──────────────┘
+                      │
+                      ↓
+         ┌─────────────────────────────────┐
+         │  Rendered HTML Page             │
+         │  (Sent to Browser)              │
+         └─────────────────────────────────┘
+```
+
