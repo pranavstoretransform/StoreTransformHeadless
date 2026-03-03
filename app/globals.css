@@ -125,4 +125,90 @@ body {
   }
 }
 /* ===== HireDevelopers.tsx  END ===== */
- 
+
+/* ===== IntroSection.tsx ===== */
+
+.intro-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.intro-container {
+  width: 90%;
+  max-width: 1400px; /* Increased width by ~10% from 1200px */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Increased gap */
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.intro-content h2 {
+  font-size: 44px; /* Increased from 35px (~25% increase for impact) */
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+/* Ensure .tx-org inside h2 becomes orange and breaks line if desired */
+.intro-content h2 .tx-org {
+  color: #ff4b2b; /* Theme Orange */
+  display: block; 
+  margin-top: 8px;
+}
+
+.intro-text p {
+  font-size: 20px; /* Increased font size */
+  line-height: 1.9; /* Increased line height */
+  color: #444;
+  margin-bottom: 30px; /* Increased gap between paragraphs */
+}
+
+/* Make font weight 400 explicit if coming from HTML content */
+.intro-text span {
+  font-weight: 400 !important;
+}
+
+.intro-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image-wrapper img {
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: left;
+    gap: 50px;
+  }
+  
+  .intro-content h2 {
+    font-size: 36px;
+  }
+  
+  .intro-image-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-section {
+    padding: 60px 0;
+  }
+  
+  .intro-content h2 {
+    font-size: 30px;
+  }
+}
+/* ===== IntroSection.tsx END ===== */ 
