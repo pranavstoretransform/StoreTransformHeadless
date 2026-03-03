@@ -20,30 +20,30 @@ body {
 /* ===== HireDevelopers.tsx ===== */
  
 .hire-section {
-  background: linear-gradient(180deg, #000000 0%, #0c0c0c 100%);
-  padding: 100px 0;
+  background: #000000;
+  padding: 80px 0;
   color: #fff;
 }
  
 .hire-container {
   width: 90%;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
   text-align: center;
 }
  
 .hire-header h2 {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #ffffff;
 }
  
 .hire-header p {
-  max-width: 820px;
-  margin: 0 auto 70px;
-  font-size: 18px;
-  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 16px;
+  line-height: 1.6;
   color: #d4d4d4;
 }
  
@@ -51,47 +51,53 @@ body {
 .hire-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 20px;
 }
  
 /* CARD */
 .hire-card {
-  background: #f2f2f2;
-  border-radius: 20px;
-  padding: 20px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   text-decoration: none;
-  transition: all 0.35s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-height: 80px;
 }
  
 .hire-card img {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  border-radius: 8px; /* Assuming icons need rounding based on screenshot if they are not already */
 }
  
 .hire-card h5 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #111;
-  transition: color 0.3s ease;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  text-align: left;
 }
  
 /* HOVER EFFECT */
 .hire-card:hover {
-  background: #ffffff;
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(255, 75, 43, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 75, 43, 0.4);
 }
- 
-.hire-card:hover img {
-  transform: scale(1.1);
+
+.hire-card h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  text-align: left;
+  transition: color 0.3s ease;
 }
- 
+
 .hire-card:hover h5 {
   color: #ff4b2b;
 }
@@ -101,6 +107,9 @@ body {
   .hire-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .hire-header h2 {
+    font-size: 32px;
+  }
 }
  
 /* MOBILE */
@@ -108,7 +117,12 @@ body {
   .hire-grid {
     grid-template-columns: 1fr;
   }
- 
+  .hire-section {
+    padding: 60px 0;
+  }
+  .hire-header h2 {
+    font-size: 28px;
+  }
 }
 /* ===== HireDevelopers.tsx  END ===== */
  

@@ -1,64 +1,91 @@
-'use client';
- 
+import React from 'react';
 import Link from 'next/link';
- 
-export default function HireDevelopers() {
- 
-  const items = [
+
+interface HireItem {
+  hire_developers_icon_image_new?: string;
+  hire_developers_heading_new?: string;
+  hire_developers_link_url_new?: {
+    title: string;
+    url: string;
+    target: string;
+  };
+}
+
+interface HireDevelopersProps {
+  title?: string;
+  description?: string;
+  items?: HireItem[];
+}
+
+const HireDevelopers = ({
+  title = "Hire Our Experts",
+  description = "Our team is a collective of specialized minds, each a leader in their field. We bring deep knowledge and proven expertise to every project, ensuring your success.",
+  items = []
+}: HireDevelopersProps) => {
+  const defaultItems = [
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/Frame-404-e1758104761909.webp",
-      title: "Ai Expert",
-      url: "/contact-us/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/Frame-404-e1758104761909.webp",
+      hire_developers_heading_new: "Ai Expert",
+      hire_developers_link_url_new: { title: "", url: "/contact-us/", target: "" }
     },
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/st-wodpres.webp",
-      title: "WordPress Expert",
-      url: "/hire-wordpress-developer/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/st-wodpres.webp",
+      hire_developers_heading_new: "WordPress Expert",
+      hire_developers_link_url_new: { title: "", url: "/hire-wordpress-developer/", target: "" }
     },
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/shopify.webp",
-      title: "Shopify Expert",
-      url: "/hire-shopify-developer/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/shopify.webp",
+      hire_developers_heading_new: "Shopify Expert",
+      hire_developers_link_url_new: { title: "", url: "/hire-shopify-developer/", target: "" }
     },
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/st-mageto.webp",
-      title: "Magento Expert",
-      url: "/hire-magento-developer/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/st-mageto.webp",
+      hire_developers_heading_new: "Magento Expert",
+      hire_developers_link_url_new: { title: "", url: "/hire-magento-developer/", target: "" }
     },
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/seo1.webp",
-      title: "SEO Expert",
-      url: "/search-engine-optimization/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/seo1.webp",
+      hire_developers_heading_new: "SEO Expert",
+      hire_developers_link_url_new: { title: "", url: "/search-engine-optimization/", target: "" }
     },
     {
-      icon: "https://storetransform.com/wp-content/uploads/2025/12/ppc.webp",
-      title: "PPC Expert",
-      url: "/ppc-advertising/"
+      hire_developers_icon_image_new: "https://storetransform.com/wp-content/uploads/2025/12/ppc.webp",
+      hire_developers_heading_new: "PPC Expert",
+      hire_developers_link_url_new: { title: "", url: "/ppc-advertising/", target: "" }
     }
   ];
- 
+
+  const displayItems = items && items.length > 0 ? items : defaultItems;
+
   return (
     <section className="hire-section">
       <div className="hire-container">
- 
         <div className="hire-header">
-          <h2>Hire Our Experts</h2>
-          <p>
-            Our team is a collective of specialized minds, each a leader in their field.
-            We bring deep knowledge and proven expertise to every project, ensuring your success.
-          </p>
+          <h2>{title}</h2>
+          <p dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
- 
+
         <div className="hire-grid">
-          {items.map((item, index) => (
-            <Link href={item.url} key={index} className="hire-card">
-              <img src={item.icon} alt={item.title} />
-              <h5>{item.title}</h5>
+          {displayItems.map((item, index) => (
+            <Link 
+              href={item.hire_developers_link_url_new?.url || '#'} 
+              key={index} 
+              className="hire-card"
+              aria-label={item.hire_developers_heading_new}
+            >
+              {item.hire_developers_icon_image_new && typeof item.hire_developers_icon_image_new === 'string' && (
+                <img 
+                  src={item.hire_developers_icon_image_new} 
+                  alt={item.hire_developers_heading_new} 
+                />
+              )}
+              <h5>{item.hire_developers_heading_new}</h5>
             </Link>
           ))}
         </div>
- 
       </div>
     </section>
   );
-}
+};
+
+export default HireDevelopers;
