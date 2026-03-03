@@ -356,3 +356,121 @@ body {
   }
 }
 /* ===== HeroSection.tsx END ===== */
+
+/* ===== ServicesGrid.tsx ===== */
+.services-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.services-container {
+  width: 90%;
+  max-width: 1400px; /* Match IntroSection max-width */
+  margin: 0 auto;
+  /* padding: 0 24px; */
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-header h2 {
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 16px;
+}
+
+.services-header p {
+  font-size: 18px;
+  color: #555;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px 0px 24px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures the strip doesn't stick out of corners */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* The colored strip */
+.service-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, #ff6a5f 0%, #ff4b3e 100%);
+}
+
+/* Even cards have black strip */
+.service-card:nth-child(even)::before {
+  background: #111;
+}
+
+.service-card h4 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  flex: 1;
+}
+
+.service-read-more {
+  display: inline-block;
+  color: #ff4b3e;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.service-read-more:hover {
+  color: #d43b30;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-header h2 {
+    font-size: 32px;
+  }
+}
+/* ===== ServicesGrid.tsx END ===== */
