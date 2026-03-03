@@ -27,7 +27,7 @@ body {
  
 .hire-container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   text-align: center;
 }
@@ -58,7 +58,7 @@ body {
 .hire-card {
   background: #ffffff;
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -69,8 +69,8 @@ body {
 }
  
 .hire-card img {
-  width: 48px;
-  height: 48px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   border-radius: 8px; /* Assuming icons need rounding based on screenshot if they are not already */
 }
