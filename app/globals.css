@@ -211,4 +211,86 @@ body {
     font-size: 30px;
   }
 }
-/* ===== IntroSection.tsx END ===== */ 
+/* ===== IntroSection.tsx END ===== */
+
+/* ===== HeroSection.tsx ===== */
+
+.hero-bg {
+  position: relative;
+  min-height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.hero-welcome {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.hero-heading {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+/* Handle both span and .tx-org for orange text */
+.hero-heading span,
+.hero-heading .tx-org {
+  color: #ff4b2b;
+}
+
+.hero-subtext {
+  font-size: 20px;
+  max-width: 900px;
+  line-height: 1.6;
+  margin-bottom: 38px;
+  color: #ffffff;
+}
+
+.hero-subtext span,
+.hero-subtext .tx-org {
+  color: #ff4b2b;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 30px;
+  }
+
+  .hero-subtext {
+    font-size: 16px;
+  }
+}
+/* ===== HeroSection.tsx END ===== */
