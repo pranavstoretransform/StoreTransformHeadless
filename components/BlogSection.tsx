@@ -74,7 +74,6 @@ const BlogSection = ({
   return (
     <section className="st-blog-section">
       <div className="container">
-
         <div className="st-blog-heading">
           <h2>{title}</h2>
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
