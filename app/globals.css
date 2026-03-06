@@ -18,27 +18,27 @@ body {
 
 
 /* ===== HireDevelopers.tsx ===== */
- 
+
 .hire-section {
   background: #000000;
   padding: 80px 0;
   color: #fff;
 }
- 
+
 .hire-container {
   width: 90%;
   max-width: 1400px;
   margin: auto;
   text-align: center;
 }
- 
+
 .hire-header h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 16px;
   color: #ffffff;
 }
- 
+
 .hire-header p {
   max-width: 800px;
   margin: 0 auto 50px;
@@ -46,14 +46,14 @@ body {
   line-height: 1.6;
   color: #d4d4d4;
 }
- 
+
 /* GRID */
 .hire-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
- 
+
 /* CARD */
 .hire-card {
   background: #ffffff;
@@ -64,17 +64,18 @@ body {
   gap: 16px;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   min-height: 80px;
 }
- 
+
 .hire-card img {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  border-radius: 8px; /* Assuming icons need rounding based on screenshot if they are not already */
+  border-radius: 8px;
+  /* Assuming icons need rounding based on screenshot if they are not already */
 }
- 
+
 .hire-card h5 {
   font-size: 18px;
   font-weight: 700;
@@ -82,7 +83,7 @@ body {
   margin: 0;
   text-align: left;
 }
- 
+
 /* HOVER EFFECT */
 .hire-card:hover {
   transform: translateY(-5px);
@@ -101,29 +102,33 @@ body {
 .hire-card:hover h5 {
   color: #ff4b2b;
 }
- 
+
 /* TABLET */
 @media (max-width: 992px) {
   .hire-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .hire-header h2 {
     font-size: 32px;
   }
 }
- 
+
 /* MOBILE */
 @media (max-width: 600px) {
   .hire-grid {
     grid-template-columns: 1fr;
   }
+
   .hire-section {
     padding: 60px 0;
   }
+
   .hire-header h2 {
     font-size: 28px;
   }
 }
+
 /* ===== HireDevelopers.tsx  END ===== */
 
 /* ============================= */
@@ -178,7 +183,8 @@ body {
   font-size: 20px;
   line-height: 1.9;
   color: #444;
-  margin: 0 0 30px 0;   /* Explicit full margin reset */
+  margin: 0 0 30px 0;
+  /* Explicit full margin reset */
 }
 
 .intro-text p:last-child {
@@ -355,6 +361,7 @@ body {
     font-size: 16px;
   }
 }
+
 /* ===== HeroSection.tsx END ===== */
 
 /* ===== ServicesGrid.tsx ===== */
@@ -365,7 +372,8 @@ body {
 
 .services-container {
   width: 90%;
-  max-width: 1400px; /* Match IntroSection max-width */
+  max-width: 1400px;
+  /* Match IntroSection max-width */
   margin: 0 auto;
   /* padding: 0 24px; */
 }
@@ -406,7 +414,8 @@ body {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Ensures the strip doesn't stick out of corners */
+  overflow: hidden;
+  /* Ensures the strip doesn't stick out of corners */
 }
 
 .service-card:hover {
@@ -469,10 +478,162 @@ body {
   .services-grid {
     grid-template-columns: 1fr;
   }
+
   .services-header h2 {
     font-size: 32px;
   }
 }
+
 /* ===== ServicesGrid.tsx END ===== */
 
+/* ===== BlogSection.tsx ===== */
+.st-blog-section {
+  padding: 80px 0;
+  background: #f5f5f5;
+}
 
+.st-blog-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.st-blog-heading h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.st-blog-heading p {
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+}
+
+.st-blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.st-blog-image-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.st-blog-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.st-blog-card:hover .st-blog-image {
+  transform: scale(1.1);
+}
+
+.st-blog-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.st-blog-card:hover .st-blog-hover {
+  opacity: 1;
+}
+
+.st-blog-hover h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.st-blog-hover-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.st-blog-date {
+  background: #444;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+/* Swiper Pagination */
+
+.st-blog-slider .swiper-pagination {
+  margin-top: 20px;
+}
+
+.st-blog-slider .swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+}
+
+.st-blog-slider .swiper-pagination-bullet-active {
+  background: #ff4a2a;
+}
+
+/* Desktop */
+
+@media (min-width:1024px) {
+
+  .st-blog-slider .swiper-pagination {
+    display: none;
+  }
+
+}
+
+/* Tablet */
+
+@media (max-width:1024px) {
+
+  .st-blog-section {
+    padding: 60px 0;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+  .st-blog-image {
+    height: 220px;
+  }
+
+  .st-blog-hover h4 {
+    font-size: 16px;
+  }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px) {
+
+  .st-blog-heading h2 {
+    font-size: 28px;
+  }
+
+  .st-blog-heading p {
+    font-size: 14px;
+  }
+
+  .st-blog-image {
+    height: 200px;
+  }
+
+}

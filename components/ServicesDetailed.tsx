@@ -82,10 +82,10 @@ const ServicesDetailed = ({
                 <div className="hm-srvc_box wd-100">
                   <div className="hm-serc-ig">
                     {item.image_service_new && (
-                      <Image 
-                        src={item.image_service_new} 
-                        alt={item.heading_service_new || 'Service Image'} 
-                        width={500} 
+                      <Image
+                        src={item.image_service_new}
+                        alt={item.heading_service_new || 'Service Image'}
+                        width={500}
                         height={300}
                         className="mx-100"
                         style={{ width: '100%', height: 'auto' }}
