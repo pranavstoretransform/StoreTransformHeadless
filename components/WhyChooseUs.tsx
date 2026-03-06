@@ -23,26 +23,7 @@ const WhyChooseUs = ({
 }:
   WhyChooseUsProps) => {
   const defaultItems: WhyChooseItem[] = [
-    {
-      number: "10+",
-      text: "Years of Experience",
-      image: "https://storetransform.com/wp-content/uploads/2025/12/year-exp.svg"
-    },
-    {
-      number: "500+",
-      text: "Projects Delivered",
-      image: "https://storetransform.com/wp-content/uploads/2025/12/project-deliver.svg"
-    },
-    {
-      number: "100%",
-      text: "Client Satisfaction",
-      image: "https://storetransform.com/wp-content/uploads/2025/12/client-satis.svg"
-    },
-    {
-      number: "24/7",
-      text: "Support Available",
-      image: "https://storetransform.com/wp-content/uploads/2025/12/support.svg"
-    }
+
   ];
 
   const displayItems = items && items.length > 0 ? items : defaultItems;

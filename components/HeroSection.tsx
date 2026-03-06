@@ -21,29 +21,29 @@ const HeroSection = ({
 }: HeroProps) => {
   return (
     <section className="hero-wrapper">
-      <div 
+      <div
         className="hero-bg"
         style={{ backgroundImage: `url(${background_image_section_1})` }}
       >
         <div className="hero-overlay"></div>
- 
+
         <div className="hero-content">
           <p className="hero-welcome">
             {welcome_text}
           </p>
- 
-          <h1 
+
+          <h1
             className="hero-heading"
             dangerouslySetInnerHTML={{ __html: tranceform_your_text }}
           >
           </h1>
- 
-          <p 
+
+          <p
             className="hero-subtext"
             dangerouslySetInnerHTML={{ __html: tranceform_your_sub_text }}
           >
           </p>
- 
+
           <a href={banner_button?.url || "#"} className="bt-btn chat-boat-btn">
             {banner_button?.title || "Get Instant Assistance"}
           </a>
