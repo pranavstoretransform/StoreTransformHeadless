@@ -112,6 +112,7 @@ h6,
 .title-h1 {
     font-size: 60px;
     line-height: 70px;
+    color: #ffffff;
 }
 
 .title-h2 {
@@ -926,7 +927,6 @@ button#primary-mobile-menu {
                     Project Artical PAGE CSS
 /*-----------------------------------------------------------*/
 
-.content-area {}
 
 .post-type-archive-project .site-main header {
     position: relative;
@@ -1821,11 +1821,7 @@ h6.n2-ss-item-content {
     position: relative;
 }
 
-.hm-jns-inner {
-    /*display: flex; flex-wrap: wrap; 
-        justify-content: space-between; 
-        grid-gap: 25px;*/
-}
+
 
 .hm-jns-bx {
     background-color: var(--white);
@@ -3069,7 +3065,7 @@ ul.hm-conts li.mail::before {
 .hmd-ulprtpr li {
     font-size: 18px;
     margin-bottom: 15px;
-    text- align: center;
+    text-align: center;
 }
 
 sub.csub2 {
@@ -4105,7 +4101,8 @@ span.awsm-job-specification-label::last-word {
 }
 
 .so-bosform {
-    box-shadow: 0 0 20px 0px #d3d3d3 text-align: center;
+    box-shadow: 0 0 20px 0px #d3d3d3;
+    text-align: center;
 }
 
 .so-seo input,
@@ -5216,7 +5213,6 @@ ul.social-icon li i:hover {
     border-radius: 8px;
 }
 
-.src-serfrm {}
 
 .invalid .so-seo p .wpcf7-not-valid-tip {
     position: relative;
